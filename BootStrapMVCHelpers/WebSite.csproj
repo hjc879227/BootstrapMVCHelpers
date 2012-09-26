@@ -80,6 +80,7 @@
     <Content Include="Content\BootstrapFiles\js\bootstrap.min.js" />
     <Content Include="Content\datepicker\css\datepicker.css" />
     <Content Include="Content\datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Download\Ovixon.Bootstrap.dll" />
     <Content Include="Global.asax" />
     <Content Include="Content\google-code-prettify\lang-apollo.js" />
     <Content Include="Content\google-code-prettify\lang-clj.js" />
