@@ -1,0 +1,9 @@
+*.pdb
+BSMVCHelpers/obj/
+WebSite/obj/
+*/bin/
+*.suo
+_ReSharper.BootStrapMVCHelpers/
+packages/
+
+

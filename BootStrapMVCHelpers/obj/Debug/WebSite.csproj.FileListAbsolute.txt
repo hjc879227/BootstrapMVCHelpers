@@ -1,0 +1,7 @@
+D:\Проекты\projects\BootStrapMVCHelpers\BootStrapMVCHelpers\bin\Ovixon.WebSite.dll
+D:\Проекты\projects\BootStrapMVCHelpers\BootStrapMVCHelpers\bin\Ovixon.WebSite.pdb
+D:\Проекты\projects\BootStrapMVCHelpers\BootStrapMVCHelpers\obj\Debug\ResolveAssemblyReference.cache
+D:\Проекты\projects\BootStrapMVCHelpers\BootStrapMVCHelpers\obj\Debug\Ovixon.WebSite.dll
+D:\Проекты\projects\BootStrapMVCHelpers\BootStrapMVCHelpers\obj\Debug\Ovixon.WebSite.pdb
+D:\Проекты\projects\BootStrapMVCHelpers\BootStrapMVCHelpers\bin\Ovixon.Bootstrap.dll
+D:\Проекты\projects\BootStrapMVCHelpers\BootStrapMVCHelpers\bin\Ovixon.Bootstrap.pdb

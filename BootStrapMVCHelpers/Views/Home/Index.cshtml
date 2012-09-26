@@ -1,0 +1,231 @@
+﻿@using Ovixon.WebSite.Models
+@using Ovixon.Bootstrap
+@model DemoElement
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+HTML helpers for ASP.NET MVC with CSS framework by <a target="_blank" href="http://twitter.github.com/bootstrap/">
+    Bootstrap, from Twitter v2.1.1</a>. <a name="Forms"></a>
+<hr />
+<h2>
+    Forms</h2>
+<div class="row">
+    <div class="span6">
+        @using (Html.BeginForm())
+        {
+            <legend>Active demo</legend>
+            @Html.BootstrapValidationSummary("All Errors:")
+            @Html.BootstrapTextBoxFor(model => model.Prop1)
+            @Html.BootstrapTextAreaFor(model => model.Prop2)
+            @Html.BootstrapPasswordFor(model => model.Prop3, new { @class = "span4" })
+            @Html.BootstrapDatepickerFor(model => model.Prop4)
+            @Html.BootstrapDatepickerFor(model => model.Prop5, withButton: true)
+            @Html.BootstrapDropDownListFor(model => model.Prop6, Model.ListOfData, optionLabel: "Select one...")
+            <div class="btn-group form-actions">
+                <button type="submit" class="btn btn-primary">
+                    Sumbit</button>
+                <button type="reset" class="btn">
+                    Reset</button></div>
+        }
+    </div>
+    <div class="span6">
+        <h4>
+            TextBox</h4>
+        <code>&#64;Html.BootstrapTextBoxFor(Model => Model.Prop1)</code>
+        <h4>
+            TextArea</h4>
+        <code>&#64;Html.BootstrapPasswordFor(Model => Model.Prop2)</code>
+        <h4>
+            Password</h4>
+        <code>&#64;Html.BootstrapPasswordFor(Model => Model.Prop3, new { &#64;class = "span4"
+            })</code>
+        <h4>
+            Date without button <small>http://www.eyecon.ro/bootstrap-datepicker/</small></h4>
+        <code>&#64;Html.BootstrapDatepickerFor(Model => Model.Prop4)</code>
+        <h4>
+            Date with button <small>http://www.eyecon.ro/bootstrap-datepicker/</small></h4>
+        <code>&#64;Html.BootstrapDatepickerFor(Model => Model.Prop5, withButton:true)</code>
+        <h4>
+            DropDownList</h4>
+        <code>&#64;Html.BootstrapDropDownListFor(model => model.Prop6, Model.ListOfData, optionLabel:
+            "Select one...")</code>
+    </div>
+</div>
+<div class="row">
+    <div class="span12">
+            <div class="alert">
+            <strong>Warning!</strong>
+            <ol>
+                <li>Need script "bootstrap-datepicker.js" on the page for datepicker helper</li>
+                <li>Need "$(".bsdatepicker").datepicker();" in script zone on the page for datepicker helper</li>
+                <li>Need scripts "jquery.validate.min.js", "jquery.validate.unobtrusive.min.js" for client validation</li>
+                <li>Need function "checkForChanges()" (see source of this page) for client validation</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<a name="Alert"></a>
+<hr />
+<h2>
+    Alert</h2>
+<div class="row">
+    <div class="span6">
+        @Html.BootstrapAlert("Standard")
+        @Html.BootstrapAlert("Error with head", title: "Head", stateType: BootstrapStateType.error)
+        @Html.BootstrapAlert("Success with start text", startText: "Start text! ", stateType: BootstrapStateType.success)
+        @Html.BootstrapAlert("Info with close button", withClose: true, stateType: BootstrapStateType.info)
+    </div>
+    <div class="span6">
+        <h4>
+            Standard</h4>
+        <code>&#64;Html.BootstrapAlert("Standard")</code>
+        <h4>
+            Error with head</h4>
+        <code>&#64;Html.BootstrapAlert("Error with head", title: "Head", stateType: BootstrapStateType.error)</code>
+        <h4>
+            Success with start text</h4>
+        <code>&#64;Html.BootstrapAlert("Success with start text", startText: "Start text! ",
+            stateType: BootstrapStateType.success)</code>
+        <h4>
+            Info with close button</h4>
+        <code>&#64;Html.BootstrapAlert("Info with close button", withClose: true, stateType:
+            BootstrapStateType.info)</code>
+    </div>
+</div>
+<div class="row">
+    <div class="span12">
+        <div class="alert">
+            <strong>Warning!</strong>
+            <ol>
+                <li>Need script "bootstrap-alert.js" on the page for closing action</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<a name="Tooltip"></a>
+<hr />
+<h2>
+    Tooltip <small>need script on the page</small></h2>
+<div class="row">
+    <div class="span6">
+        @Html.BootstrapTooltip("Standard", "This is standard - on the top")
+        <br />
+        @Html.BootstrapTooltip("Left", "On the left", tooltipType: BootstrapTooltipType.left)
+    </div>
+    <div class="span6">
+        <h4>
+            Standard</h4>
+        <code>&#64;Html.BootstrapTooltip("Standard", "This is standard - on the top")</code>
+        <h4>
+            Left</h4>
+        <code>&#64;Html.BootstrapTooltip("Left", "On the left", tooltipType: BootstrapTooltipType.left)</code>
+    </div>
+</div>
+<div class="row">
+    <div class="span12">
+        <div class="alert">
+            <strong>Warning!</strong>
+            <ol>
+                <li>Need script "bootstrap-tooltip.js" on the page for tooltip helper</li>
+                <li>Need "$(".bstooltip").tooltip();" in script zone on the page for tooltip helper</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<a name="List"></a>
+<hr />
+<h2>
+    List</h2>
+<div class="row">
+    <div class="span6">
+        @Html.BootstrapList(Model.ListOfStrings, BootstrapListType.unordered)
+    </div>
+    <div class="span6">
+        <h4>
+            Ordered</h4>
+        <code>&#64;Html.BootstrapList(Model.ListOfStrings)</code>
+        <h4>
+            Unordered <small>example</small></h4>
+        <code>&#64;Html.BootstrapList(Model.ListOfStrings, BootstrapListType.unordered)</code>
+        <h4>
+            Unstyled</h4>
+        <code>&#64;Html.BootstrapList(Model.ListOfStrings, BootstrapListType.unstyled)</code>
+    </div>
+</div>
+<a name="Descriptions"></a>
+<hr />
+<h2>
+    Descriptions</h2>
+<div class="row">
+    <div class="span6">
+        @Html.BootstrapDescriptions(Model.ListOfDescriptions, horizontalView: true)
+    </div>
+    <div class="span6">
+        <h4>
+            Descriptions</h4>
+        <code>&#64;Html.BootstrapDescriptions(Model.ListOfDescriptions)</code>
+        <h4>
+            With horizontal view <small>example</small></h4>
+        <code>&#64;Html.BootstrapDescriptions(Model.ListOfDescriptions, horizontalView: true)</code>
+    </div>
+</div>
+<a name="PassiveTable"></a>
+<hr />
+<h2>
+    Passive Table</h2>
+<div class="row">
+    <div class="span6">
+        @Html.BootstrapPassiveTable(Model.ListOfElementsForTable, headers: Model.ListOfHeadersForTable, tableStyles: new BootstrapTableStyles(condensed: true), rowStyles: Model.ListOfStylesForRows)
+    </div>
+    <div class="span6">
+        <h4>
+            Clear</h4>
+        <code>&#64;Html.BootstrapPassiveTable(Model.ListOfElementsForTable)</code>
+        <h4>
+            With raw styles <small>example</small></h4>
+        <code>&#64;Html.BootstrapPassiveTable(Model.ListOfElementsForTable, headers: Model.ListOfHeadersForTable,
+            tableStyles: new BootstrapTableStyles(condensed: true), rowStyles: Model.ListOfStylesForRows)</code>
+    </div>
+</div>
+@section Styles
+{
+    <link href="/Content/datepicker/css/datepicker.css" rel="stylesheet" type="text/css" />
+}
+@section Scripts
+{
+    <script src="/Content/datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
+    <script src="/Content/BootstrapFiles/js/bootstrap-alert.js" type="text/javascript"></script>
+    <script src="/Content/BootstrapFiles/js/bootstrap-tooltip.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+    <script type="text/javascript" language="javascript">
+        function checkForChanges() {
+            var elems = $(".field-validation-valid.text-error");
+            elems.removeClass('text-error');
+            elems.parents(".control-group").removeClass("error");
+
+            elems = $(".field-validation-error").not(".text-error");
+            elems.addClass('text-error');
+            elems.parents(".control-group").addClass("error");
+
+            elems = $(".validation-summary-errors").not(".text-error");
+            elems.addClass('alert').addClass('alert-error');
+
+            setTimeout(checkForChanges, 300);
+        }
+        $(document).ready(function () {
+            $("#DynamicLinkContainer").html(
+                "<li><a href='#Forms'>Forms</a></li>" +
+                "<li><a href='#Alert'>Alerts</a></li>" +
+                "<li><a href='#Tooltip'>Tooltips</a></li>" +
+                "<li><a href='#List'>List</a></li>" +
+                "<li><a href='#Descriptions'>Descriptions</a></li>" +
+                "<li><a href='#PassiveTable'>Passive Table</a></li>"
+            );
+            $(".bsdatepicker").datepicker();
+            $(".bstooltip").tooltip();
+
+            checkForChanges();
+        });
+    </script>
+}
