@@ -1,7 +1,16 @@
 <Configuration>
   <RecentFiles>
-    <RecentFiles />
-    <RecentEdits />
+    <RecentFiles>
+      <File id="A2D67E32-52E0-4FF3-8E55-5DA8068206A6/d:Views/d:Home/f:Index.cshtml" caret="927" fromTop="18" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="A2D67E32-52E0-4FF3-8E55-5DA8068206A6/d:Views/d:Home/f:Index.cshtml" caret="3404" fromTop="14" />
+      <File id="A2D67E32-52E0-4FF3-8E55-5DA8068206A6/d:Views/d:Home/f:Index.cshtml" caret="3404" fromTop="9" />
+      <File id="A2D67E32-52E0-4FF3-8E55-5DA8068206A6/d:Views/d:Home/f:Index.cshtml" caret="929" fromTop="15" />
+      <File id="A2D67E32-52E0-4FF3-8E55-5DA8068206A6/d:Views/d:Home/f:Index.cshtml" caret="927" fromTop="22" />
+      <File id="A2D67E32-52E0-4FF3-8E55-5DA8068206A6/d:Views/d:Home/f:Index.cshtml" caret="744" fromTop="18" />
+      <File id="A2D67E32-52E0-4FF3-8E55-5DA8068206A6/d:Views/d:Home/f:Index.cshtml" caret="501" fromTop="12" />
+    </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
     <NAntPath value="" />
@@ -21,4 +30,14 @@
       <setting name="SolutionAnalysisEnabled">False</setting>
     </boolean>
   </SettingsComponent>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="HtmlCodeCompletionContext">
+      <Item value="href" priority="11" />
+      <Item value="Index.cshtml" priority="5" />
+      <Item value="Download" priority="6" />
+      <Item value="Ovixon.Bootstrap.dll" priority="5" />
+      <Item value="br" priority="5" />
+      <Item value="a" priority="5" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
 </Configuration>

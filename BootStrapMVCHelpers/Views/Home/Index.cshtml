@@ -13,7 +13,7 @@
     </p>
     <p>
         <a href="/Download/Ovixon.Bootstrap.dll">[Download
-            dll (26.09.2012)]</a>&nbsp;&nbsp;&nbsp;
+            dll (28.09.2012)]</a>&nbsp;&nbsp;&nbsp;
         <a href="https://github.com/Ovixon/BootstrapMVCHelpers">[project on GitHub]</a>&nbsp;&nbsp;&nbsp;
         <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
         <span class="yashare-auto-init" data-yasharel10n="ru" data-yasharetype="none" data-yasharequickservices="vkontakte,facebook,twitter,odnoklassniki,gplus">
@@ -71,12 +71,9 @@
         <div class="alert">
             <strong>Warning!</strong>
             <ol>
-                <li>Need script "bootstrap-datepicker.js" on the page for datepicker helper</li>
-                <li>Need "$(".bsdatepicker").datepicker();" in script zone on the page for datepicker
-                    helper</li>
-                <li>Need scripts "jquery.validate.min.js", "jquery.validate.unobtrusive.min.js" for
+                <li>Need jQuery, script "<a href="http://www.eyecon.ro/bootstrap-datepicker/">bootstrap-datepicker.js</a>" on the page and "$(".bsdatepicker").datepicker();" in script zone for datepicker helper</li>
+                <li>Need jQuery, scripts "jquery.validate.min.js", "jquery.validate.unobtrusive.min.js" and function "checkForChanges()" (use "Html.BootstrapClientValidation()" in script zone or <a href="/Download/CheckForClientValidation.js">this</a> script on the page) for
                     client validation</li>
-                <li>Need function "checkForChanges()" (see source of this page) for client validation</li>
             </ol>
         </div>
     </div>
@@ -114,7 +111,7 @@
         <div class="alert">
             <strong>Warning!</strong>
             <ol>
-                <li>Need script "bootstrap-alert.js" on the page for closing action</li>
+                <li>Need jQuery and script "bootstrap-alert.js" on the page for closing action</li>
             </ol>
         </div>
     </div>
@@ -143,8 +140,7 @@
         <div class="alert">
             <strong>Warning!</strong>
             <ol>
-                <li>Need script "bootstrap-tooltip.js" on the page for tooltip helper</li>
-                <li>Need "$(".bstooltip").tooltip();" in script zone on the page for tooltip helper</li>
+                <li>Need jQuery, script "bootstrap-tooltip.js" on the page and "$(".bstooltip").tooltip();" in script zone for tooltip helper</li>
             </ol>
         </div>
     </div>
@@ -216,33 +212,15 @@
     <script src="/Scripts/jquery.validate.min.js" type="text/javascript"></script>
     <script src="/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
     <script type="text/javascript" language="javascript">
-        function checkForChanges() {
-            var elems = $(".field-validation-valid.text-error");
-            elems.removeClass('text-error');
-            elems.parents(".control-group").removeClass("error");
 
-            elems = $(".field-validation-error").not(".text-error");
-            elems.addClass('text-error');
-            elems.parents(".control-group").addClass("error");
+        @Html.BootstrapClientValidation()
 
-            elems = $(".validation-summary-errors").not(".text-error");
-            elems.addClass('alert').addClass('alert-error');
-
-            setTimeout(checkForChanges, 300);
-        }
         $(document).ready(function () {
-            $("#DynamicLinkContainer").html(
-                "<li><a href='#Forms'>Forms</a></li>" +
-                "<li><a href='#Alert'>Alerts</a></li>" +
-                "<li><a href='#Tooltip'>Tooltips</a></li>" +
-                "<li><a href='#List'>List</a></li>" +
-                "<li><a href='#Descriptions'>Descriptions</a></li>" +
-                "<li><a href='#PassiveTable'>Passive Table</a></li>"
-            );
+            
             $(".bsdatepicker").datepicker();
             $(".bstooltip").tooltip();
 
-            checkForChanges();
+            CheckForClientValidation();
         });
     </script>
 }
