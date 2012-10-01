@@ -27,23 +27,6 @@ namespace Ovixon.Bootstrap
 
         public static MvcHtmlString BootstrapValidationSummary(this HtmlHelper htmlHelper, string message, IDictionary<string, object> htmlAttributes)
         {
-            /*// Nothing to do if there aren't any errors
-            if (htmlHelper.ViewData.ModelState.IsValid)
-            {
-                return null;
-            }
-
-            htmlAttributes = htmlAttributes ?? new Dictionary<string, object>();
-
-            if (!htmlAttributes.Keys.Contains("class"))
-                htmlAttributes.Add("class", "alert alert-error");
-            else
-            {
-                string temp = htmlAttributes["class"].ToString();
-                temp += " alert alert-error";
-                htmlAttributes.Remove("class");
-                htmlAttributes.Add("class", temp);
-            }*/
             return htmlHelper.ValidationSummary(message, htmlAttributes);
         }
     }

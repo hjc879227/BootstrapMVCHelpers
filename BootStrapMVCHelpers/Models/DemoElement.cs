@@ -108,5 +108,59 @@ namespace Ovixon.WebSite.Models
                 return styles;
             }
         }
+
+        public Tree<string> DemoTree
+        {
+            get
+            {
+                Tree<string> tree = new Tree<string>();
+
+                Tree<string> tree_cld = new Tree<string>();
+                tree_cld.Value = "elem 1";
+                tree.Add(tree_cld);
+
+                Tree<string> tree_cld_cld = new Tree<string>();
+                tree_cld_cld.Value = "<span class='muted'>elem 1.1</span>";
+                tree_cld.Add(tree_cld_cld);
+
+                tree_cld_cld = new Tree<string>();
+                tree_cld_cld.Value = "<span class='text-warning'>elem 1.2</span>";
+                tree_cld.Add(tree_cld_cld);
+
+                Tree<string> tree_cld_cld_cld = new Tree<string>();
+                tree_cld_cld_cld.Value = "elem 1.2.1";
+                tree_cld_cld.Add(tree_cld_cld_cld);
+
+                tree_cld_cld_cld = new Tree<string>();
+                tree_cld_cld_cld.Value = "elem 1.2.2";
+                tree_cld_cld.Add(tree_cld_cld_cld);
+
+                tree_cld_cld = new Tree<string>();
+                tree_cld_cld.Value = "<span class='text-error'>elem 1.3</span>";
+                tree_cld.Add(tree_cld_cld);
+
+                tree_cld_cld = new Tree<string>();
+                tree_cld_cld.Value = "<span class='text-info'>elem 1.4</span>";
+                tree_cld.Add(tree_cld_cld);
+
+                tree_cld_cld = new Tree<string>();
+                tree_cld_cld.Value = "<span class='text-success'>elem 1.5</span>";
+                tree_cld.Add(tree_cld_cld);
+
+                tree_cld = new Tree<string>();
+                tree_cld.Value = "elem 2";
+                tree.Add(tree_cld);
+
+                tree_cld = new Tree<string>();
+                tree_cld.Value = "elem 3";
+                tree.Add(tree_cld);
+
+                tree_cld = new Tree<string>();
+                tree_cld.Value = "elem 4";
+                tree.Add(tree_cld);
+
+                return tree;
+            }
+        }
     }
 }

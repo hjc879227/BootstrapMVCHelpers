@@ -80,6 +80,23 @@
     <Content Include="Content\BootstrapFiles\js\bootstrap.min.js" />
     <Content Include="Content\datepicker\css\datepicker.css" />
     <Content Include="Content\datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Content\bootstrap.treeview\ajax-loader.gif" />
+    <Content Include="Content\bootstrap.treeview\file.gif" />
+    <Content Include="Content\bootstrap.treeview\folder-closed.gif" />
+    <Content Include="Content\bootstrap.treeview\folder.gif" />
+    <Content Include="Content\bootstrap.treeview\minus.gif" />
+    <Content Include="Content\bootstrap.treeview\plus.gif" />
+    <Content Include="Content\bootstrap.treeview\treeview-black-line.gif" />
+    <Content Include="Content\bootstrap.treeview\treeview-black.gif" />
+    <Content Include="Content\bootstrap.treeview\treeview-default-line.gif" />
+    <Content Include="Content\bootstrap.treeview\treeview-default.gif" />
+    <Content Include="Content\bootstrap.treeview\treeview-famfamfam-line.gif" />
+    <Content Include="Content\bootstrap.treeview\treeview-famfamfam.gif" />
+    <Content Include="Content\bootstrap.treeview\treeview-gray-line.gif" />
+    <Content Include="Content\bootstrap.treeview\treeview-gray.gif" />
+    <Content Include="Content\bootstrap.treeview\treeview-red-line.gif" />
+    <Content Include="Content\bootstrap.treeview\treeview-red.gif" />
+    <Content Include="Content\bootstrap.treeview.css" />
     <Content Include="Download\CheckForClientValidation.js" />
     <Content Include="Download\Ovixon.Bootstrap.dll" />
     <Content Include="Global.asax" />
@@ -105,6 +122,7 @@
     <Content Include="Content\google-code-prettify\prettify.js" />
     <Content Include="Scripts\CheckForClientValidation.js" />
     <Content Include="Scripts\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\jquery.treeview.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -136,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\datepicker\less\datepicker.less" />
+    <None Include="Download\bootstrap.tree.rar" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
