@@ -63,8 +63,6 @@ namespace Ovixon.Bootstrap
             var tagMainContainer = new TagBuilder("div");
             if (curState == StateElement.Get)
                 tagMainContainer.AddCssClass("control-group");
-            else if (curState == StateElement.PostWithOutError)
-                tagMainContainer.AddCssClass("control-group success");
             else if (curState == StateElement.PostWithError)
                 tagMainContainer.AddCssClass("control-group error");
 
@@ -100,10 +98,9 @@ namespace Ovixon.Bootstrap
             {
                 htmlAttributes = htmlAttributes ?? new Dictionary<string, object>();
                 var tagInput = new TagBuilder("div");
-                tagInput.AddCssClass("input-append date");
+                tagInput.AddCssClass("input-append date bsdatepicker");
                 tagInput.MergeAttribute("data-date-format", format);
                 tagInput.MergeAttribute("data-date", DateTime.Now.Date.ToShortDateString());
-                tagInput.AddCssClass("bsdatepicker");
 
                 htmlAttributes.Add("readonly", "readonly");
                 var tagInput1 = htmlHelper.TextBox(name, value, htmlAttributes).ToString();
@@ -119,7 +116,7 @@ namespace Ovixon.Bootstrap
                 result = tagInput.ToString(TagRenderMode.Normal);
             }
 
-            var helpMessage = htmlHelper.ValidationMessage(name).ToString();
+            var helpMessage = htmlHelper.ValidationMessage(name, new { @class = "help-block" }) + (curState == StateElement.PostWithOutError ? "<span class=\"help-block\">&nbsp;</span>" : "");
 
             tagControlsContainer.InnerHtml = result + "&nbsp;" + helpMessage;
             tagMainContainer.InnerHtml = tagLabel.ToString(TagRenderMode.Normal) + tagControlsContainer.ToString(TagRenderMode.Normal);

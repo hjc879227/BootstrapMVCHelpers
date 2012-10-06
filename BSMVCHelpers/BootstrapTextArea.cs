@@ -109,7 +109,7 @@ namespace Ovixon.Bootstrap
             var tagTextArea = (IsOuterIntParam ? htmlHelper.TextArea(name, valueStr, textAreaRows, textAreaColumns, htmlAttributes) :
                 htmlHelper.TextArea(name, valueStr, htmlAttributes));
 
-            var helpMessage = htmlHelper.ValidationMessage(name).ToString();
+            var helpMessage = htmlHelper.ValidationMessage(name, new { @class = "help-block" }) + (curState == StateElement.PostWithOutError ? "<span class=\"help-block\">&nbsp;</span>" : "");
 
             tagControlsContainer.InnerHtml = tagTextArea.ToString() + "&nbsp;" + helpMessage;
             tagMainContainer.InnerHtml = tagLabel.ToString(TagRenderMode.Normal) + tagControlsContainer.ToString(TagRenderMode.Normal);

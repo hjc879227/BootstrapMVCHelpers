@@ -79,7 +79,7 @@ namespace Ovixon.Bootstrap
 
             var tagInput = htmlHelper.Password(name, value, htmlAttributes);
 
-            var helpMessage = htmlHelper.ValidationMessage(name).ToString();
+            var helpMessage = htmlHelper.ValidationMessage(name, new { @class = "help-block" }) + (curState == StateElement.PostWithOutError ? "<span class=\"help-block\">&nbsp;</span>" : "");
 
             tagControlsContainer.InnerHtml = tagInput.ToString() + "&nbsp;" + helpMessage;
             tagMainContainer.InnerHtml = tagLabel.ToString(TagRenderMode.Normal) + tagControlsContainer.ToString(TagRenderMode.Normal);

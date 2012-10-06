@@ -26,7 +26,7 @@
     Forms</h2>
 <div class="row">
     <div class="span6">
-        @using (Html.BeginForm())
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
         {
             <legend>Active demo</legend>
             @Html.BootstrapValidationSummary("All Errors:")
@@ -36,6 +36,9 @@
             @Html.BootstrapDatepickerFor(model => model.Prop4)
             @Html.BootstrapDatepickerFor(model => model.Prop5, withButton: true)
             @Html.BootstrapDropDownListFor(model => model.Prop6, Model.ListOfData, optionLabel: "Select one...")
+            @Html.BootstrapCheckBoxFor(model => model.Prop7)
+            @Html.BootstrapCheckBoxFor(model => model.Prop8, helpText: "with help text")
+            @Html.BootstrapCheckBoxListFor(model => model.Prop9, Model.ListForCheckBoxList)
             <div class="btn-group form-actions">
                 <button type="submit" class="btn btn-primary">
                     Sumbit</button>
@@ -64,6 +67,13 @@
             DropDownList</h4>
         <code>&#64;Html.BootstrapDropDownListFor(model => model.Prop6, Model.ListOfData, optionLabel:
             "Select one...")</code>
+        <h4>
+            CheckBox</h4>
+        <code>&#64;Html.BootstrapCheckBoxFor(model => model.Prop7)</code>
+        <code>&#64;Html.BootstrapCheckBoxFor(model => model.Prop8, helpText: "with help text")</code>
+        <h4>
+            CheckBoxList</h4>
+        <code>&#64;Html.BootstrapCheckBoxListFor(model => model.Prop9, Model.ListForCheckBoxList)</code>
     </div>
 </div>
 <div class="row">

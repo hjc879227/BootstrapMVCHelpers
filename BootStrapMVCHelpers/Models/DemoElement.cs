@@ -14,9 +14,8 @@ namespace Ovixon.WebSite.Models
         [DisplayName("Always correct property:")]
         public string Prop1 { get; set; }
 
-        [DisplayName("Always incorrect property:")]
-        [Required(ErrorMessage = "Prop2 is not valid")]
-        [StringLength(9999, MinimumLength = 9999, ErrorMessage = "Prop2 is not valid")]
+        [DisplayName("Property with min length = 6:")]
+        [StringLength(9999, MinimumLength = 6, ErrorMessage = "Minimum length is 6 chars")]
         public string Prop2 { get; set; }
 
         [DisplayName("Required property:")]
@@ -36,6 +35,28 @@ namespace Ovixon.WebSite.Models
         [Required]
         public string Prop6 { get; set; }
 
+        [DisplayName("Bool property:")]
+        public bool Prop7 { get; set; }
+
+        public bool Prop8 { get; set; }
+
+        private string[] _Prop9 = null;
+        [DisplayName("CheckBoxList:")]
+        public string[] Prop9
+        {
+            get
+            {
+                if (_Prop9 == null)
+                    return new[] {"2", "4"};
+
+                return _Prop9;
+            }
+            set
+            {
+                _Prop9 = value;
+            }
+        }
+
         public List<SelectListItem> ListOfData
         {
             get
@@ -44,6 +65,8 @@ namespace Ovixon.WebSite.Models
                 list.Add(new SelectListItem() { Text = "elem 1", Value = "1" });
                 list.Add(new SelectListItem() { Text = "elem 2", Value = "2" });
                 list.Add(new SelectListItem() { Text = "elem 3", Value = "3" });
+                list.Add(new SelectListItem() { Text = "elem 4", Value = "4" });
+                list.Add(new SelectListItem() { Text = "elem 5", Value = "5" });
                 return list;
             }
         }
@@ -64,6 +87,15 @@ namespace Ovixon.WebSite.Models
                 foreach (SelectListItem item in ListOfData)
                     elems.Add("ID-" + item.Value, item.Text);
                 return elems;
+            }
+        }
+
+
+        public MultiSelectList ListForCheckBoxList
+        {
+            get
+            {
+                return new MultiSelectList(this.ListOfData, "Value", "Text");
             }
         }
 

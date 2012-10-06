@@ -67,6 +67,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.treeview\treeview-default.png" />
     <Content Include="Content\BootstrapFiles\css\bootstrap-responsive.css" />
     <Content Include="Content\BootstrapFiles\css\bootstrap-responsive.min.css" />
     <Content Include="Content\BootstrapFiles\css\bootstrap.css" />
@@ -82,7 +83,6 @@
     <Content Include="Content\datepicker\js\bootstrap-datepicker.js" />
     <Content Include="Content\bootstrap.treeview\ajax-loader.gif" />
     <Content Include="Content\bootstrap.treeview\treeview-default-line.gif" />
-    <Content Include="Content\bootstrap.treeview\treeview-default.gif" />
     <Content Include="Content\bootstrap.treeview.css" />
     <Content Include="Download\CheckForClientValidation.js" />
     <Content Include="Download\Ovixon.Bootstrap.dll" />
