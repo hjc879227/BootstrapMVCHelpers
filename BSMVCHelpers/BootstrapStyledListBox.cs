@@ -14,37 +14,39 @@ namespace Ovixon.Bootstrap
 {
     public static partial class BootstrapHtmlHelpers
     {
-        public static MvcHtmlString BootstrapDropDownListFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, IEnumerable<SelectListItem> selectList, string optionLabel = "") where TModel : class
+        public static MvcHtmlString BootstrapStyledListBoxFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, IEnumerable<SelectListItem> selectList) where TModel : class
         {
-            return htmlHelper.BootstrapDropDownListFor(expression, null, selectList, optionLabel);
+            return htmlHelper.BootstrapStyledListBoxFor(expression, null, selectList);
         }
 
-        public static MvcHtmlString BootstrapDropDownListFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, object htmlAttributes, IEnumerable<SelectListItem> selectList, string optionLabel = "") where TModel : class
+        public static MvcHtmlString BootstrapStyledListBoxFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, object htmlAttributes, IEnumerable<SelectListItem> selectList) where TModel : class
         {
-            return htmlHelper.BootstrapDropDownListFor(expression, new RouteValueDictionary(htmlAttributes), selectList, optionLabel);
+            return htmlHelper.BootstrapStyledListBoxFor(expression, new RouteValueDictionary(htmlAttributes), selectList);
         }
 
-        public static MvcHtmlString BootstrapDropDownListFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, IDictionary<string, object> htmlAttributes, IEnumerable<SelectListItem> selectList, string optionLabel = "") where TModel : class
+        public static MvcHtmlString BootstrapStyledListBoxFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, IDictionary<string, object> htmlAttributes, IEnumerable<SelectListItem> selectList) where TModel : class
         {
             string inputName = ExpressionHelper.GetExpressionText(expression);
             TProperty value = CommonHtmlHelpers.GetValue(htmlHelper, expression);
-            return htmlHelper.BootstrapDropDownList(inputName, htmlAttributes, selectList, optionLabel);
+            return htmlHelper.BootstrapStyledListBox(inputName, htmlAttributes, selectList);
         }
 
-        public static MvcHtmlString BootstrapDropDownList(this HtmlHelper htmlHelper, string name, IEnumerable<SelectListItem> selectList, string optionLabel = "")
+        public static MvcHtmlString BootstrapStyledListBox(this HtmlHelper htmlHelper, string name, IEnumerable<SelectListItem> selectList)
         {
-            return BootstrapDropDownList(htmlHelper, name, null /* htmlAttributes */, selectList, optionLabel);
+            return BootstrapStyledListBox(htmlHelper, name, null /* htmlAttributes */, selectList);
         }
 
-        public static MvcHtmlString BootstrapDropDownList(this HtmlHelper htmlHelper, string name, object htmlAttributes, IEnumerable<SelectListItem> selectList, string optionLabel = "")
+        public static MvcHtmlString BootstrapStyledListBox(this HtmlHelper htmlHelper, string name, object htmlAttributes, IEnumerable<SelectListItem> selectList)
         {
-            return BootstrapDropDownList(htmlHelper, name, new RouteValueDictionary(htmlAttributes), selectList, optionLabel);
+            return BootstrapStyledListBox(htmlHelper, name, new RouteValueDictionary(htmlAttributes), selectList);
         }
 
-        public static MvcHtmlString BootstrapDropDownList(this HtmlHelper htmlHelper, string name, IDictionary<string, object> htmlAttributes, IEnumerable<SelectListItem> selectList, string optionLabel = "")
+        public static MvcHtmlString BootstrapStyledListBox(this HtmlHelper htmlHelper, string name, IDictionary<string, object> htmlAttributes, IEnumerable<SelectListItem> selectList)
         {            
             if (String.IsNullOrEmpty(name))
                 throw new ArgumentException("Name Is Null Or Empty", "name");
+
+            htmlAttributes = htmlAttributes ?? new Dictionary<string, object>();
 
             string fullName = htmlHelper.ViewContext.ViewData.TemplateInfo.GetFullHtmlFieldName(name);
 
@@ -90,7 +92,18 @@ namespace Ovixon.Bootstrap
             var tagControlsContainer = new TagBuilder("div");
             tagControlsContainer.AddCssClass("controls");
 
-            var tagInput = htmlHelper.DropDownList(name, selectList, optionLabel, htmlAttributes);
+            htmlAttributes.Add("data-placeholder", " ");
+            if (!htmlAttributes.Keys.Contains("class"))
+                htmlAttributes.Add("class", "chzn-select");
+            else
+            {
+                string temp = htmlAttributes["class"].ToString();
+                temp += " chzn-select";
+                htmlAttributes.Remove("class");
+                htmlAttributes.Add("class", temp);
+            }
+
+            var tagInput = htmlHelper.ListBox(name, selectList, htmlAttributes);
 
             var helpMessage = htmlHelper.ValidationMessage(name, new { @class = "help-block" }) + (curState == StateElement.PostWithOutError ? "<span class=\"help-block\">&nbsp;</span>" : "");
 

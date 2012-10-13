@@ -12,8 +12,7 @@
             Bootstrap, from Twitter v2.1.1</a>.
     </p>
     <p>
-        <a href="/Download/Ovixon.Bootstrap.dll">[Download
-            dll (06.10.2012, v 1.1)]</a>&nbsp;&nbsp;&nbsp;
+        <a href="/Download/Ovixon.Bootstrap.dll">[Download dll (13.10.2012, v 1.2)]</a>&nbsp;&nbsp;&nbsp;
         <a href="https://github.com/Ovixon/BootstrapMVCHelpers">[project on GitHub]</a>&nbsp;&nbsp;&nbsp;
         <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
         <span class="yashare-auto-init" data-yasharel10n="ru" data-yasharetype="none" data-yasharequickservices="vkontakte,facebook,twitter,odnoklassniki,gplus">
@@ -25,65 +24,118 @@
 <h2>
     Forms</h2>
 <div class="row">
-    <div class="span6">
+    <div class="span12">
         @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
         {
             <legend>Active demo</legend>
-            @Html.BootstrapValidationSummary("All Errors:")
-            @Html.BootstrapTextBoxFor(model => model.Prop1)
-            @Html.BootstrapTextAreaFor(model => model.Prop2)
-            @Html.BootstrapPasswordFor(model => model.Prop3, new { @class = "span4" })
-            @Html.BootstrapDatepickerFor(model => model.Prop4)
-            @Html.BootstrapDatepickerFor(model => model.Prop5, withButton: true)
-            @Html.BootstrapDropDownListFor(model => model.Prop6, Model.ListOfData, optionLabel: "Select one...")
-            @Html.BootstrapCheckBoxFor(model => model.Prop7)
-            @Html.BootstrapCheckBoxFor(model => model.Prop8, helpText: "with help text")
-            @Html.BootstrapCheckBoxListFor(model => model.Prop9, Model.ListForCheckBoxList)
-            <div class="btn-group form-actions">
-                <button type="submit" class="btn btn-primary">
-                    Sumbit</button>
-                <button type="reset" class="btn">
-                    Reset</button></div>
+            @Html.BootstrapValidationSummary()
+            <div class="well">
+                <h3>
+                    Text elements</h3>
+                <div class="row">
+                    <div class="span6">
+                        @Html.BootstrapTextBoxFor(model => model.Prop1)
+                        @Html.BootstrapTextAreaFor(model => model.Prop2)
+                        @Html.BootstrapPasswordFor(model => model.Prop3, new { @class = "span4" })
+                        @Html.BootstrapDatepickerFor(model => model.Prop4)
+                        @Html.BootstrapDatepickerFor(model => model.Prop5, withButton: true)
+                    </div>
+                    <div class="span5">
+                        <h4>
+                            TextBox</h4>
+                        <code>&#64;Html.BootstrapTextBoxFor(Model => Model.Prop1)</code>
+                        <h4>
+                            TextArea</h4>
+                        <code>&#64;Html.BootstrapPasswordFor(Model => Model.Prop2)</code>
+                        <h4>
+                            Password</h4>
+                        <code>&#64;Html.BootstrapPasswordFor(Model => Model.Prop3, new { &#64;class = "span4"
+                            })</code>
+                        <h4>
+                            Date without button <small>http://www.eyecon.ro/bootstrap-datepicker/</small></h4>
+                        <code>&#64;Html.BootstrapDatepickerFor(Model => Model.Prop4)</code>
+                        <h4>
+                            Date with button <small>http://www.eyecon.ro/bootstrap-datepicker/</small></h4>
+                        <code>&#64;Html.BootstrapDatepickerFor(Model => Model.Prop5, withButton:true)</code></div>
+                </div>
+            </div>
+            <div class="well">
+                <h3>
+                    Single select elements</h3>
+                <div class="row">
+                    <div class="span6">
+                        @Html.BootstrapDropDownListFor(model => model.Prop6, Model.ListOfData, optionLabel: "Select one...")
+                        @Html.BootstrapStyledDropDownListFor(model => model.Prop6_1, Model.ListOfData, optionLabel: "Select one...")
+                        @Html.BootstrapCheckBoxFor(model => model.Prop7)
+                        @Html.BootstrapCheckBoxFor(model => model.Prop8, helpText: "with help text")
+                    </div>
+                    <div class="span5">
+                        <h4>
+                            DropDownList</h4>
+                        <code>&#64;Html.BootstrapDropDownListFor(model => model.Prop6, Model.ListOfData, optionLabel:
+                            "Select one...")</code>
+                        <h4>
+                            Styled DropDownList <small>http://harvesthq.github.com/chosen/</small></h4>
+                        <code>&#64;Html.BootstrapStyledDropDownListFor(model => model.Prop6_1, Model.ListOfData,
+                            optionLabel: "Select one...")</code>
+                        <h4>
+                            CheckBox</h4>
+                        <ol>
+                            <li><code>&#64;Html.BootstrapCheckBoxFor(model => model.Prop7)</code></li>
+                            <li><code>&#64;Html.BootstrapCheckBoxFor(model => model.Prop8, helpText: "with help
+                                text")</code></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="well">
+                <h3>
+                    Multi select elements</h3>
+                <div class="row">
+                    <div class="span6">
+                        @Html.BootstrapCheckBoxListFor(model => model.Prop9, Model.ListForCheckBoxList)
+                        @Html.BootstrapListBoxFor(model => model.Prop10, Model.ListForCheckBoxList)
+                        @Html.BootstrapStyledListBoxFor(model => model.Prop10_1, Model.ListForCheckBoxList)
+                    </div>
+                    <div class="span5">
+                        <h4>
+                            CheckBoxList</h4>
+                        <code>&#64;Html.BootstrapCheckBoxListFor(model => model.Prop9, Model.ListForCheckBoxList)</code>
+                        <h4>
+                            ListBox</h4>
+                        <code>&#64;Html.BootstrapListBoxFor(model => model.Prop10, Model.ListForCheckBoxList)</code>
+                        <h4>
+                            Styled ListBox</h4>
+                        <code>&#64;Html.BootstrapStyledListBoxFor(model => model.Prop10_1, Model.ListForCheckBoxList)</code>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span6">
+                    <div class="btn-group form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            Sumbit</button>
+                        <button type="reset" class="btn">
+                            Reset</button></div>
+                </div>
+            </div>
         }
-    </div>
-    <div class="span6">
-        <h4>
-            TextBox</h4>
-        <code>&#64;Html.BootstrapTextBoxFor(Model => Model.Prop1)</code>
-        <h4>
-            TextArea</h4>
-        <code>&#64;Html.BootstrapPasswordFor(Model => Model.Prop2)</code>
-        <h4>
-            Password</h4>
-        <code>&#64;Html.BootstrapPasswordFor(Model => Model.Prop3, new { &#64;class = "span4"
-            })</code>
-        <h4>
-            Date without button <small>http://www.eyecon.ro/bootstrap-datepicker/</small></h4>
-        <code>&#64;Html.BootstrapDatepickerFor(Model => Model.Prop4)</code>
-        <h4>
-            Date with button <small>http://www.eyecon.ro/bootstrap-datepicker/</small></h4>
-        <code>&#64;Html.BootstrapDatepickerFor(Model => Model.Prop5, withButton:true)</code>
-        <h4>
-            DropDownList</h4>
-        <code>&#64;Html.BootstrapDropDownListFor(model => model.Prop6, Model.ListOfData, optionLabel:
-            "Select one...")</code>
-        <h4>
-            CheckBox</h4>
-        <code>&#64;Html.BootstrapCheckBoxFor(model => model.Prop7)</code>
-        <code>&#64;Html.BootstrapCheckBoxFor(model => model.Prop8, helpText: "with help text")</code>
-        <h4>
-            CheckBoxList</h4>
-        <code>&#64;Html.BootstrapCheckBoxListFor(model => model.Prop9, Model.ListForCheckBoxList)</code>
     </div>
 </div>
 <div class="row">
     <div class="span12">
-        <div class="alert">
-            <strong>Warning!</strong>
+        <div class="alert-info alert">
+            <i class="icon-info-sign"></i><strong>Information:</strong>
             <ol>
-                <li>Need jQuery, script "<a href="http://www.eyecon.ro/bootstrap-datepicker/">bootstrap-datepicker.js</a>" on the page and "$(".bsdatepicker").datepicker();" in script zone for datepicker helper</li>
-                <li>Need jQuery, scripts "jquery.validate.min.js", "jquery.validate.unobtrusive.min.js" and function "checkForChanges()" (use "Html.BootstrapClientValidation()" in script zone or <a href="/Download/CheckForClientValidation.js">this</a> script on the page) for
-                    client validation</li>
+                <li>Need jQuery, script "<a href="http://www.eyecon.ro/bootstrap-datepicker/">bootstrap-datepicker.js</a>"
+                    on the page and "$(".bsdatepicker").datepicker();" in script zone for datepicker
+                    helper</li>
+                <li>Need jQuery, script "<a href="http://harvesthq.github.com/chosen/">chosen.jquery.js</a>"
+                    on the page and "$(".chzn-select").chosen();" in script zone for styled DDL helper</li>
+                <li>Need jQuery, scripts "jquery.validate.min.js", "jquery.validate.unobtrusive.min.js"
+                    and function "checkForChanges()" (use "Html.BootstrapClientValidation()" in script
+                    zone or <a href="/Download/CheckForClientValidation.js">this</a> script on the page)
+                    for client validation</li>
             </ol>
         </div>
     </div>
@@ -116,10 +168,11 @@
             BootstrapStateType.info)</code>
     </div>
 </div>
+<br />
 <div class="row">
     <div class="span12">
-        <div class="alert">
-            <strong>Warning!</strong>
+        <div class="alert-info alert">
+            <i class="icon-info-sign"></i><strong>Information:</strong>
             <ol>
                 <li>Need jQuery and script "bootstrap-alert.js" on the page for closing action</li>
             </ol>
@@ -145,12 +198,14 @@
         <code>&#64;Html.BootstrapTooltip("Left", "On the left", tooltipType: BootstrapTooltipType.left)</code>
     </div>
 </div>
+<br />
 <div class="row">
     <div class="span12">
-        <div class="alert">
-            <strong>Warning!</strong>
+        <div class="alert-info alert">
+            <i class="icon-info-sign"></i><strong>Information:</strong>
             <ol>
-                <li>Need jQuery, script "bootstrap-tooltip.js" on the page and "$(".bstooltip").tooltip();" in script zone for tooltip helper</li>
+                <li>Need jQuery, script "bootstrap-tooltip.js" on the page and "$(".bstooltip").tooltip();"
+                    in script zone for tooltip helper</li>
             </ol>
         </div>
     </div>
@@ -213,28 +268,56 @@
             tableStyles: new BootstrapTableStyles(condensed: true), rowStyles: Model.ListOfStylesForRows)</code>
     </div>
 </div>
+<h3>
+    Active Table</h3>
+<div class="row">
+    <div class="span6">
+        @Html.BootstrapActiveTable("testTable", Model.ListOfElementsForTable2, headers: Model.ListOfHeadersForTable, tableStyles: new BootstrapTableStyles(condensed: true), rowStyles: Model.ListOfStylesForRows2)
+    </div>
+    <div class="span6">
+        <h4>
+            Clear</h4>
+        <code>&#64;Html.BootstrapActiveTable("testTable", Model.ListOfElementsForTable2)</code>
+        <h4>
+            With raw styles <small>example</small></h4>
+        <code>&#64;Html.BootstrapActiveTable("testTable", Model.ListOfElementsForTable2, headers:
+            Model.ListOfHeadersForTable, tableStyles: new BootstrapTableStyles(condensed: true),
+            rowStyles: Model.ListOfStylesForRows2)</code>
+    </div>
+</div>
+<div class="row">
+    <div class="span12">
+        <div class="alert-info alert">
+            <i class="icon-info-sign"></i><strong>Information:</strong>
+            <ol>
+                <li>Need jQuery, scripts "<a href="http://www.datatables.net/">jquery.dataTables.js</a>", 
+                  <a href="/Download/DataTableSettings.js">this</a> script and <a href="/Download/DataTableSettings.cs">this</a> style on the page)
+                    for active DataTable</li>
+            </ol>
+        </div>
+    </div>
+</div>
 <a name="Tree"></a>
 <hr />
 <h2>
     Tree</h2>
-<h3>
-    Passive tree</h3>
 <div class="row">
     <div class="span6">
         @Html.BootstrapTree(Model.DemoTree)
     </div>
     <div class="span6">
-        <h4>
-            Demo</h4>
         <code>&#64;Html.BootstrapTree(Model.DemoTree)</code>
     </div>
 </div>
+<br />
 <div class="row">
     <div class="span12">
-        <div class="alert">
-            <strong>Warning!</strong>
+        <div class="alert-info alert">
+            <i class="icon-info-sign"></i><strong>Information:</strong>
             <ol>
-                <li>Need jQuery, script "<a href="bassistance.de/jquery-plugins/jquery-plugin-treeview/">jquery.treeview.js</a>" on the page, "$(".bstree").treeview();" in script zone and <a href="/Download/bootstrap.tree.rar">this</a> styles and images for tree helper</li>
+                <li>Need jQuery, script "<a href="bassistance.de/jquery-plugins/jquery-plugin-treeview/">jquery.treeview.js</a>"
+                    on the page, "$(".bstree").treeview();" in script zone and <a href="/Download/bootstrap.tree.rar">
+                        this</a> styles and images for tree helper</li>
             </ol>
         </div>
     </div>
@@ -243,6 +326,8 @@
 {
     <link href="/Content/datepicker/css/datepicker.css" rel="stylesheet" type="text/css" />
     <link href="/Content/bootstrap.treeview.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/chosen/chosen.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/DataTableSettings.css" rel="stylesheet" type="text/css" />
 }
 @section Scripts
 {
@@ -252,6 +337,9 @@
     <script src="/Scripts/jquery.validate.min.js" type="text/javascript"></script>
     <script src="/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
     <script src="/Scripts/jquery.treeview.js" type="text/javascript"></script>
+    <script src="/Content/chosen/chosen.jquery.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="/Scripts/DataTableSettings.js" type="text/javascript"></script>
     <script type="text/javascript" language="javascript">
 
         @Html.BootstrapClientValidation()
@@ -261,8 +349,11 @@
             $(".bsdatepicker").datepicker();
             $(".bstooltip").tooltip();
             $(".bstree").treeview();
+            $(".chzn-select").chosen({allow_single_deselect: true});
 
             CheckForClientValidation();
+            
         });
+        
     </script>
 }

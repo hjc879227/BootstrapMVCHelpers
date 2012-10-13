@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\Projects\vs2010\public\mvchelpers" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Профиль1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Download/Ovixon.Bootstrap.dll" publishTime="10/06/2012 23:31:25" />
+    <file relUrl="Download/CheckForClientValidation.js" publishTime="09/28/2012 17:34:57" />
+    <file relUrl="Content/BootstrapFiles/img/glyphicons-halflings-white.png" publishTime="09/24/2012 09:48:04" />
+    <file relUrl="Scripts/jquery.treeview.js" publishTime="09/29/2012 12:02:46" />
+    <file relUrl="Content/datepicker/css/datepicker.css" publishTime="09/24/2012 13:58:16" />
+    <file relUrl="Global.asax" publishTime="09/24/2012 09:05:05" />
+    <file relUrl="Views/_ViewStart.cshtml" publishTime="09/24/2012 09:05:05" />
+    <file relUrl="bin/Ovixon.WebSite.pdb" publishTime="10/06/2012 23:31:13" />
+    <file relUrl="Content/BootstrapFiles/js/bootstrap.min.js" publishTime="09/24/2012 09:48:04" />
+    <file relUrl="Content/BootstrapFiles/css/bootstrap-responsive.css" publishTime="09/24/2012 09:48:04" />
+    <file relUrl="bin/Ovixon.Bootstrap.pdb" publishTime="10/06/2012 23:31:12" />
+    <file relUrl="bin/Ovixon.WebSite.dll" publishTime="10/06/2012 23:31:13" />
+    <file relUrl="Views/Shared/Error.cshtml" publishTime="09/24/2012 09:05:05" />
+    <file relUrl="Scripts/jquery.validate.min.js" publishTime="09/25/2012 12:40:11" />
+    <file relUrl="Content/BootstrapFiles/js/bootstrap.js" publishTime="09/24/2012 09:48:04" />
+    <file relUrl="Scripts/jquery-1.7.2.min.js" publishTime="09/24/2012 10:01:13" />
+    <file relUrl="Content/bootstrap.treeview/treeview-default.png" publishTime="09/29/2012 13:16:05" />
+    <file relUrl="Scripts/CheckForClientValidation.js" publishTime="09/28/2012 17:34:33" />
+    <file relUrl="Content/datepicker/js/bootstrap-datepicker.js" publishTime="09/24/2012 13:58:16" />
+    <file relUrl="Content/BootstrapFiles/js/bootstrap-alert.js" publishTime="09/24/2012 17:05:43" />
+    <file relUrl="Scripts/jquery.validate.js" publishTime="09/25/2012 14:56:51" />
+    <file relUrl="packages.config" publishTime="09/24/2012 09:05:16" />
+    <file relUrl="Content/BootstrapFiles/js/bootstrap-tooltip.js" publishTime="09/24/2012 17:16:42" />
+    <file relUrl="Views/Home/Index.cshtml" publishTime="10/06/2012 23:31:02" />
+    <file relUrl="bin/Ovixon.Bootstrap.dll" publishTime="10/06/2012 23:31:12" />
+    <file relUrl="Content/bootstrap.treeview/treeview-default-line.gif" publishTime="09/29/2012 12:03:19" />
+    <file relUrl="Views/Shared/_Layout.cshtml" publishTime="09/28/2012 20:30:25" />
+    <file relUrl="Content/BootstrapFiles/css/bootstrap.min.css" publishTime="09/24/2012 09:48:04" />
+    <file relUrl="Content/bootstrap.treeview/ajax-loader.gif" publishTime="09/29/2012 12:03:19" />
+    <file relUrl="Content/BootstrapFiles/css/bootstrap.css" publishTime="09/24/2012 09:48:04" />
+    <file relUrl="Content/bootstrap.treeview.css" publishTime="09/29/2012 13:23:08" />
+    <file relUrl="Web.config" publishTime="10/06/2012 23:32:52" />
+    <file relUrl="Content/BootstrapFiles/img/glyphicons-halflings.png" publishTime="09/24/2012 09:48:04" />
+    <file relUrl="Content/BootstrapFiles/css/bootstrap-responsive.min.css" publishTime="09/24/2012 09:48:04" />
+    <file relUrl="Scripts/jquery.validate.unobtrusive.js" publishTime="09/25/2012 17:12:32" />
+    <file relUrl="Content/client-validation-styles.css" publishTime="09/25/2012 14:25:47" />
+    <file relUrl="Scripts/jquery.validate.unobtrusive.min.js" publishTime="09/25/2012 12:40:11" />
+    <file relUrl="Views/Web.config" publishTime="09/24/2012 09:05:05" />
+  </publishProfile>
+</publishData>
