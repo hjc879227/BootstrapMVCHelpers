@@ -12,7 +12,7 @@
             Bootstrap, from Twitter v2.1.1</a>.
     </p>
     <p>
-        <a href="/Download/Ovixon.Bootstrap.dll">[Download dll (13.10.2012, v 1.2)]</a>&nbsp;&nbsp;&nbsp;
+        <a href="/Download/Ovixon.Bootstrap.dll">[Download dll (18.10.2012, v 1.3)]</a>&nbsp;&nbsp;&nbsp;
         <a href="https://github.com/Ovixon/BootstrapMVCHelpers">[project on GitHub]</a>&nbsp;&nbsp;&nbsp;
         <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
         <span class="yashare-auto-init" data-yasharel10n="ru" data-yasharetype="none" data-yasharequickservices="vkontakte,facebook,twitter,odnoklassniki,gplus">
@@ -256,7 +256,7 @@
     Passive Table</h3>
 <div class="row">
     <div class="span6">
-        @Html.BootstrapPassiveTable(Model.ListOfElementsForTable, headers: Model.ListOfHeadersForTable, tableStyles: new BootstrapTableStyles(condensed: true), rowStyles: Model.ListOfStylesForRows)
+        @Html.BootstrapPassiveTable(DemoElement.ListOfElementsForTable, headers: DemoElement.ListOfHeadersForTable, tableStyles: new BootstrapTableStyles(condensed: true), rowStyles: DemoElement.ListOfStylesForRows)
     </div>
     <div class="span6">
         <h4>
@@ -264,15 +264,15 @@
         <code>&#64;Html.BootstrapPassiveTable(Model.ListOfElementsForTable)</code>
         <h4>
             With raw styles <small>example</small></h4>
-        <code>&#64;Html.BootstrapPassiveTable(Model.ListOfElementsForTable, headers: Model.ListOfHeadersForTable,
-            tableStyles: new BootstrapTableStyles(condensed: true), rowStyles: Model.ListOfStylesForRows)</code>
+        <code>&#64;Html.BootstrapPassiveTable(DemoElement.ListOfElementsForTable, headers: DemoElement.ListOfHeadersForTable,
+            tableStyles: new BootstrapTableStyles(condensed: true), rowStyles: DemoElement.ListOfStylesForRows)</code>
     </div>
 </div>
 <h3>
     Active Table</h3>
 <div class="row">
     <div class="span6">
-        @Html.BootstrapActiveTable("testTable", Model.ListOfElementsForTable2, headers: Model.ListOfHeadersForTable, tableStyles: new BootstrapTableStyles(condensed: true), rowStyles: Model.ListOfStylesForRows2)
+        @Html.BootstrapActiveTable("testTable", DemoElement.ListOfElementsForTable2, headers: DemoElement.ListOfHeadersForTable, tableStyles: new BootstrapTableStyles(condensed: true), rowStyles: DemoElement.ListOfStylesForRows2)
     </div>
     <div class="span6">
         <h4>
@@ -280,19 +280,45 @@
         <code>&#64;Html.BootstrapActiveTable("testTable", Model.ListOfElementsForTable2)</code>
         <h4>
             With raw styles <small>example</small></h4>
-        <code>&#64;Html.BootstrapActiveTable("testTable", Model.ListOfElementsForTable2, headers:
-            Model.ListOfHeadersForTable, tableStyles: new BootstrapTableStyles(condensed: true),
-            rowStyles: Model.ListOfStylesForRows2)</code>
+        <code>&#64;Html.BootstrapActiveTable("testTable", DemoElement.ListOfElementsForTable2, headers:
+            DemoElement.ListOfHeadersForTable, tableStyles: new BootstrapTableStyles(condensed: true),
+            rowStyles: DemoElement.ListOfStylesForRows2)</code>
     </div>
 </div>
+<br />
 <div class="row">
     <div class="span12">
         <div class="alert-info alert">
             <i class="icon-info-sign"></i><strong>Information:</strong>
             <ol>
                 <li>Need jQuery, scripts "<a href="http://www.datatables.net/">jquery.dataTables.js</a>", 
-                  <a href="/Download/DataTableSettings.js">this</a> script and <a href="/Download/DataTableSettings.cs">this</a> style on the page)
+                  <a href="/Download/DataTableSettings.js">this</a> script and <a href="/Download/DataTableSettings.css">this</a> style on the page)
                     for active DataTable</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<h3>
+    Ajax Table</h3>
+<div class="row">
+    <div class="span6">
+        @Html.BootstrapAjaxTable("testAjaxTable", headers: DemoElement.ListOfHeadersForTable, tableStyles: new BootstrapTableStyles(condensed: true, bordered: true))
+    </div>
+    <div class="span6">
+        <h4>
+            Example</h4>
+        <code>&#64;Html.BootstrapAjaxTable("testAjaxTable", headers: DemoElement.ListOfHeadersForTable, tableStyles: new BootstrapTableStyles(condensed: true, bordered: true))</code>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="span12">
+        <div class="alert-info alert">
+            <i class="icon-info-sign"></i><strong>Information:</strong>
+            <ol>
+                <li>Need jQuery, scripts "<a href="http://www.datatables.net/">jquery.dataTables.js</a>", 
+                  <a href="/Download/AjaxDataTableSettings.js">this</a> script and <a href="/Download/DataTableSettings.css">this</a> style on the page)
+                    for ajax DataTable</li>
             </ol>
         </div>
     </div>
@@ -340,6 +366,7 @@
     <script src="/Content/chosen/chosen.jquery.min.js" type="text/javascript"></script>
     <script src="/Scripts/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="/Scripts/DataTableSettings.js" type="text/javascript"></script>
+    <script src="/Scripts/AjaxDataTableSettings.js" type="text/javascript"></script>
     <script type="text/javascript" language="javascript">
 
         @Html.BootstrapClientValidation()

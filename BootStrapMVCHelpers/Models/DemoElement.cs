@@ -137,7 +137,7 @@ namespace Ovixon.WebSite.Models
             }
         }
 
-        public List<string> ListOfHeadersForTable
+        public static List<string> ListOfHeadersForTable
         {
             get
             {
@@ -149,7 +149,7 @@ namespace Ovixon.WebSite.Models
             }
         }
 
-        public List<List<string>> ListOfElementsForTable
+        public static List<List<string>> ListOfElementsForTable
         {
             get
             {
@@ -164,7 +164,7 @@ namespace Ovixon.WebSite.Models
             }
         }
 
-        public List<List<string>> ListOfElementsForTable2
+        public static List<List<string>> ListOfElementsForTable2
         {
             get
             {
@@ -185,7 +185,7 @@ namespace Ovixon.WebSite.Models
             }
         }
 
-        public List<BootstrapRowStyleType> ListOfStylesForRows
+        public static List<BootstrapRowStyleType> ListOfStylesForRows
         {
             get
             {
@@ -200,7 +200,7 @@ namespace Ovixon.WebSite.Models
             }
         }
 
-        public List<BootstrapRowStyleType> ListOfStylesForRows2
+        public static List<BootstrapRowStyleType> ListOfStylesForRows2
         {
             get
             {

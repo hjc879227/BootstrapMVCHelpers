@@ -59,6 +59,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="codes\AjaxDataTableGetParams.cs" />
+    <Compile Include="codes\IOrderedEnumerable.cs" />
     <Compile Include="Models\DemoElement.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -91,11 +93,13 @@
     <Content Include="Content\bootstrap.treeview\ajax-loader.gif" />
     <Content Include="Content\bootstrap.treeview\treeview-default-line.gif" />
     <Content Include="Content\bootstrap.treeview.css" />
+    <Content Include="Download\AjaxDataTableSettings.js" />
     <Content Include="Download\CheckForClientValidation.js" />
     <Content Include="Download\DataTableSettings.css" />
     <Content Include="Download\DataTableSettings.js" />
     <Content Include="Download\Ovixon.Bootstrap.dll" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\AjaxDataTableSettings.js" />
     <Content Include="Scripts\CheckForClientValidation.js" />
     <Content Include="Scripts\DataTableSettings.js" />
     <Content Include="Scripts\jquery-1.7.2.min.js" />
